@@ -19,8 +19,8 @@ router.get("/", (req, res) => {
 
 // post file
 router.post("/", (req, res) => {
-    console.log(req.files);
-  fileController.saveFile(req.files, (err, files) => {
+    console.log(req.body);
+  fileController.saveFile(req, (err, files) => {
     if (err) {
         console.log(err)
       res.status(400).json(err);

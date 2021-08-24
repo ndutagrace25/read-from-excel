@@ -2,9 +2,9 @@ const xlsx = require("xlsx");
 
 module.exports = {
   saveFile(files, result) {
-    console.log(files);
-    if (files.file) {
-      const file = files.file;
+    console.log(files.body.message);
+    if (files.files.file) {
+      const file = files.files.file;
       const fileName = file.name;
 
       file.mv(`./uploads/${fileName}`, (err) => {
